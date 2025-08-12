@@ -1,11 +1,20 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { Button } from "@/components/ui/button";
+import { useEffect } from "react";
+import { setPageSEO } from "@/lib/seo";
 
 const Index = () => {
+  useEffect(() => {
+    setPageSEO("MedNarrative+ | AI Healthcare Dashboards", "Role-based doctor and patient dashboards for faster, clearer care.");
+  }, []);
   return (
     <div className="min-h-screen flex items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
+      <div className="text-center space-y-6">
+        <h1 className="text-4xl font-bold tracking-tight">MedNarrative+</h1>
+        <p className="text-lg text-muted-foreground max-w-xl">AI-powered transcription, SOAP note generation, and patient-friendly summaries. Built for clinicians and patients.</p>
+        <div className="flex items-center justify-center gap-3">
+          <Button variant="hero" asChild><a href="/signup">Get Started</a></Button>
+          <Button variant="outline" asChild><a href="/signin">Sign In</a></Button>
+        </div>
       </div>
     </div>
   );
